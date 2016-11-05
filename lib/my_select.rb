@@ -1,3 +1,15 @@
 def my_select(collection)
- # your code here!
+  if collection == nil
+    return collection
+  else
+    i = 0
+    array = []
+    while i < collection.length
+      if yield(collection[i]) == true
+        array << collection[i]
+      end
+      i += 1
+    end
+  end
+  array
 end
